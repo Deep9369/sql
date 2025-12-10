@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form{
+            background: #ffffff;
+            padding: 25px 30px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0 ,0,0.1);
+
+        }
+        form input{
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        button {
+    width: 100%;
+    padding: 12px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #357ABD;
+}
+
+    </style>
+</head>
+<body>
+    <form action="/api/students/update/<%= result.student_id %>" method="post">
+        <h2>UPDATE</h2>
+        <input type="text" name="name" placeholder="Enter Your Name" value="<%= result.student_name %>"><br><br>
+        <input type="email" name="email" readonly value="<%= result.student_email %>"><br><br>
+        <input type="password" name="password" value="<%= result.student_password %>"><br><br>
+        <input type="text" name="mobile" value="<%= result.student_mobile %>"><br><br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
